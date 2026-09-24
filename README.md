@@ -1,68 +1,45 @@
-# Samridhi Singh — Portfolio
+# Samridhi Singh — MBA Portfolio
 
-A single-page portfolio site for Samridhi Singh (HR & Digital Marketing, MBA candidate at Mittal School of
-Business, LPU). Plain HTML/CSS/JS — no build step, no dependencies beyond Google Fonts.
+A static, single-page portfolio site. No build step, no dependencies — plain HTML/CSS/JS.
 
 ```
-portfolio/
-├── index.html      → all content lives here
-├── style.css        → design system + layout
-├── script.js         → mobile nav + scroll animations
-└── assets/
-    └── (add Samridhi-Singh-Resume.pdf here)
+index.html
+assets/
+  css/style.css
+  js/script.js
+  img/            certificate images + headshot
+  docs/           résumé PDF, Letter of Recommendation PDF
 ```
 
-## 1. Add your résumé PDF (optional but recommended)
+## Deploy on GitHub Pages (2 minutes)
 
-The "Download résumé" button in the hero links to `assets/Samridhi-Singh-Resume.pdf`. Drop your résumé PDF
-into the `assets/` folder with that exact filename, or edit the `href` in `index.html` (search for
-`download` in the hero section) to point wherever you'd like.
+1. Create a new repository on GitHub, e.g. `samridhi-portfolio`.
+2. Upload every file in this folder to the repository, keeping the folder
+   structure exactly as-is (the `assets/` folder must sit next to `index.html`).
+   - Easiest way: on the repo page, click **Add file → Upload files**, drag
+     the whole contents of this folder in, and commit.
+3. Go to **Settings → Pages**.
+4. Under **Build and deployment → Source**, choose **Deploy from a branch**.
+5. Under **Branch**, choose `main` and folder `/ (root)`, then **Save**.
+6. Wait 1–2 minutes. Your site will be live at:
+   `https://<your-github-username>.github.io/<repository-name>/`
 
-## 2. Put it on GitHub
+## Updating content later
 
-If you don't already have a GitHub account, create one at [github.com](https://github.com) — it's free.
+- All text lives directly in `index.html` — search for the section you want
+  to change (`<!-- ============ EXPERIENCE ============ -->` etc.).
+- To swap the résumé PDF, replace `assets/docs/Samridhi_Singh_Resume.pdf`
+  and keep the same filename (or update the link in `index.html`).
+- To add a new certificate, drop the image into `assets/img/` and copy one
+  of the existing `<a class="cert-card">` blocks in the Certifications
+  section.
 
-1. Create a new repository on GitHub. Name it whatever you like — if you want the site at
-   `https://<your-username>.github.io` directly (no sub-path), name the repo exactly
-   `<your-username>.github.io`. Any other name works too, it'll just live at
-   `https://<your-username>.github.io/<repo-name>`.
-2. On your computer, open a terminal in this `portfolio` folder and run:
+## Notes on content accuracy
 
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial portfolio site"
-   git branch -M main
-   git remote add origin https://github.com/<your-username>/<repo-name>.git
-   git push -u origin main
-   ```
-
-   (Replace `<your-username>` and `<repo-name>` with your actual GitHub username and repo name.)
-
-## 3. Turn on GitHub Pages
-
-1. On GitHub, open your repository → **Settings** → **Pages** (left sidebar, under "Code and automation").
-2. Under **Build and deployment → Source**, choose **Deploy from a branch**.
-3. Under **Branch**, choose `main` and folder `/ (root)`, then **Save**.
-4. Wait about a minute, then refresh the page — GitHub will show you the live URL
-   (`https://<your-username>.github.io/<repo-name>/`).
-
-That's it — the site is live. Any time you edit a file and push to `main`, GitHub Pages redeploys
-automatically within a minute or two.
-
-## Editing content
-
-Everything is in `index.html`, in plain readable sections (`<!-- HERO -->`, `<!-- EXPERIENCE -->`, etc.).
-To update text, dates, or links, edit that file directly — no build tools required. Colors, fonts, and
-spacing live in `style.css` under the `:root` custom properties at the top if you want to adjust the
-palette.
-
-## Local preview
-
-Before pushing, you can preview the site locally. From this folder, run:
-
-```bash
-python3 -m http.server 8000
-```
-
-then open `http://localhost:8000` in your browser.
+Two entries in the Certifications section — **Certificate of Leadership**
+(Zyntiq) and **Human Resource Management** (FundsAudit) — are listed from
+the résumé text only, since no certificate file for either was provided.
+Their date ranges as written on the résumé (Jun 2025–Aug 2025, and
+Dec 2025–Jan 2025) look like possible typos against the rest of the
+timeline — worth double-checking against the original certificates before
+sharing this site publicly.
